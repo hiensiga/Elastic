@@ -7,6 +7,8 @@ target 'Elastic' do
 
   # Pods for Elastic
 
+  pod 'Alamofire', '4.8.0'
+
   target 'ElasticTests' do
     inherit! :search_paths
     # Pods for testing
