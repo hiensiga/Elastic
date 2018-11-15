@@ -9,6 +9,7 @@ target 'Elastic' do
 
   pod 'Alamofire', '4.8.0'
   pod 'SwifterSwift', '4.6.0'
+  pod 'AlamofireObjectMapper'
 
   target 'ElasticTests' do
     inherit! :search_paths

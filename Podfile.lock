@@ -1,5 +1,9 @@
 PODS:
   - Alamofire (4.8.0)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - ObjectMapper (3.4.1)
   - SwifterSwift (4.6.0):
     - SwifterSwift/AppKit (= 4.6.0)
     - SwifterSwift/CoreGraphics (= 4.6.0)
@@ -20,17 +24,22 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.8.0)
-  - SwifterSwift
+  - AlamofireObjectMapper
+  - SwifterSwift (= 4.6.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireObjectMapper
+    - ObjectMapper
     - SwifterSwift
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
 
-PODFILE CHECKSUM: c11236663745c1d363199999085d78e0a32c3919
+PODFILE CHECKSUM: c85d2b10d25e07bfb8ef3df484a86b01b2d73a8f
 
 COCOAPODS: 1.5.3
