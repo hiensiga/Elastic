@@ -21,11 +21,13 @@ PODS:
   - SwifterSwift/SpriteKit (4.6.0)
   - SwifterSwift/SwiftStdlib (4.6.0)
   - SwifterSwift/UIKit (4.6.0)
+  - SwiftLint (0.29.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.8.0)
   - AlamofireObjectMapper
   - SwifterSwift (= 4.6.0)
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -33,13 +35,15 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - ObjectMapper
     - SwifterSwift
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
+  SwiftLint: d4e7443d93e2bbe868dc302e6c7ac30b469d6a14
 
-PODFILE CHECKSUM: c85d2b10d25e07bfb8ef3df484a86b01b2d73a8f
+PODFILE CHECKSUM: 87f06cde93fe6dc3a77f27e24e7756277fd6b00e
 
 COCOAPODS: 1.5.3
