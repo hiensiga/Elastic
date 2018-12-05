@@ -16,7 +16,7 @@ class CompanyAPI: NSObject {
     static let shared = CompanyAPI()
     private var manager: SessionManager
     
-    override init() {
+    private override init() {
         self.manager = Alamofire.SessionManager.default
     }
     
