@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CompanyViewController: UIViewController {
 
@@ -77,7 +78,10 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = company.name
         cell.detailTextLabel?.text = company.desc
-        cell.imageView?.image = UIImage.init(named: "img_placeholder_company")
+        if let url = company.avatarUrl {
+            let imageURL = URL.init(string: url)!
+            cell.imageView?.af_setImage(withURL: imageURL, placeholderImage: UIImage.init(named: "img_placeholder_company"), imageTransition: .crossDissolve(0.3))
+        }
         
         return cell
     }
