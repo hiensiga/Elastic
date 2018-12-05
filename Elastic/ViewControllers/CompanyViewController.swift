@@ -10,13 +10,17 @@ import UIKit
 
 class CompanyViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    var companies : [Company]
+    let cellReuseIdentifier = "companyCellReuseIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupView()
+        loadData()
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -27,4 +31,41 @@ class CompanyViewController: UIViewController {
     }
     */
 
+}
+
+// MARK: Views
+extension CompanyViewController {
+    
+    func setupView() {
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+    }
+}
+
+// MARK: Data
+extension CompanyViewController {
+    
+    func loadData() {
+        
+    }
+}
+
+extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return companies.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell
+        
+        let company = companies[indexPath.row]
+        
+        cell.textLabel?.text = company.name
+        cell.detailTextLabel?.text = company.desc
+        
+        return cell
+    }
+    
 }
