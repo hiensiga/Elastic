@@ -9,12 +9,16 @@
 import UIKit
 import ObjectMapper
 
-class Company: NSObject {
+class Company: Mappable {
 
     var id: String?
     var name: String?
     var avatarUrl: String?
     var desc: String?
+    
+    required init?(map: Map) {
+        
+    }
     
     func mapping(map: Map) {
         id <- map["id"]
