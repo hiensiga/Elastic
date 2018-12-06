@@ -22,13 +22,28 @@ class CompanyAPI: NSObject {
     
     func getCompanies(completion:@escaping ([Company]) -> Void, failure:@escaping (Int, String) -> Void) -> Void {
         
-        let url: String = APIConstants.host + APIConstants.pathCompany
+        let url: String = APIConstants.host + APIConstants.pathCompanies
         self.manager.request(url).validate(statusCode: 200..<300).responseArray { (response: DataResponse<[Company]>) in
 
             switch response.result {
             case .success:
                 let companies = response.result.value ?? []
                 completion(companies)
+            case .failure(let error):
+                failure(0, "Error \(error)")
+            }
+        }
+    }
+    
+    func getMessages(companyId: String, completion:@escaping ([Message]) -> Void, failure:@escaping (Int, String) -> Void) -> Void {
+        
+        let url: String = APIConstants.host + APIConstants.pathCompanies + "/" + companyId + APIConstants.pathMessage
+        self.manager.request(url).validate(statusCode: 200..<300).responseArray { (response: DataResponse<[Message]>) in
+            
+            switch response.result {
+            case .success:
+                let messages = response.result.value ?? []
+                completion(messages)
             case .failure(let error):
                 failure(0, "Error \(error)")
             }

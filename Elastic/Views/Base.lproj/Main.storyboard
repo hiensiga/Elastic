@@ -39,11 +39,47 @@
                     <navigationItem key="navigationItem" title="Company" id="Nfx-ih-DWl"/>
                     <connections>
                         <outlet property="tableView" destination="hpT-nm-SZK" id="JO8-mX-hA7"/>
+                        <segue destination="ZJH-uD-lx1" kind="show" identifier="ShowMessageSegue" id="lRO-BC-78d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="604" y="9"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="OHu-AZ-QN0">
+            <objects>
+                <viewController id="ZJH-uD-lx1" customClass="MessageViewController" customModule="Elastic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kuS-Vs-TMX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ug-eE-uhW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZJH-uD-lx1" id="zaZ-Jv-4vf"/>
+                                    <outlet property="delegate" destination="ZJH-uD-lx1" id="qiC-4x-ueX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8ug-eE-uhW" firstAttribute="leading" secondItem="CcW-bh-b6x" secondAttribute="leading" id="D3f-Pk-bsv"/>
+                            <constraint firstItem="8ug-eE-uhW" firstAttribute="top" secondItem="CcW-bh-b6x" secondAttribute="top" id="ceC-4G-Ydl"/>
+                            <constraint firstItem="CcW-bh-b6x" firstAttribute="bottom" secondItem="8ug-eE-uhW" secondAttribute="bottom" id="heh-vl-RXv"/>
+                            <constraint firstItem="CcW-bh-b6x" firstAttribute="trailing" secondItem="8ug-eE-uhW" secondAttribute="trailing" id="y45-wf-pXm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CcW-bh-b6x"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Message" id="lki-qt-BVF"/>
+                    <connections>
+                        <outlet property="tableView" destination="8ug-eE-uhW" id="F6X-PR-rGi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdH-aA-r3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1444" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j1Z-Ue-hoO">

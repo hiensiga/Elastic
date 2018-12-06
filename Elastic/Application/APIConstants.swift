@@ -10,6 +10,9 @@ import UIKit
 
 class APIConstants: NSObject {
 
-    static let host = "https://5c07c407646dca0013f87e30.mockapi.io/v1/"
-    static let pathCompany = "companies"
+    static let host = "https://5c07c407646dca0013f87e30.mockapi.io/v1"
+    static let pathCompanies = "/companies"
+    
+    static let pathMessage = "/Message"
+    
 }

@@ -14,6 +14,7 @@ class CompanyViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var companies : [Company] = []
     let cellReuseIdentifier = "companyCellReuseIdentifier"
+    let showMessageSegueIdentifier = "ShowMessageSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +23,21 @@ class CompanyViewController: UIViewController {
         loadData()
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        guard let selectedPath = tableView.indexPathForSelectedRow else { return }
+        if segue.identifier == showMessageSegueIdentifier
+        {
+            if let destinationVC = segue.destination as? MessageViewController {
+                let company = self.companies[selectedPath.row]
+                destinationVC.company = company
+            }
+        }
     }
-    */
-
 }
 
 // MARK: Views
@@ -86,4 +92,8 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: showMessageSegueIdentifier, sender: nil)
+    }
 }
