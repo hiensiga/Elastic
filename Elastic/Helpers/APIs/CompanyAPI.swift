@@ -37,7 +37,8 @@ class CompanyAPI: NSObject {
     
     func getMessages(companyId: String, completion:@escaping ([Message]) -> Void, failure:@escaping (Int, String) -> Void) -> Void {
         
-        let url: String = APIConstants.host + APIConstants.pathCompanies + "/" + companyId + APIConstants.pathMessage
+        // let url: String = APIConstants.host + APIConstants.pathCompanies + "/" + companyId + APIConstants.pathMessage
+        let url: String = APIConstants.host + "/company/1/messages"
         self.manager.request(url).validate(statusCode: 200..<300).responseArray { (response: DataResponse<[Message]>) in
             
             switch response.result {

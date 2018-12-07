@@ -5,6 +5,7 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - ESPullToRefresh (2.7)
   - ObjectMapper (3.4.1)
   - SwifterSwift (4.6.0):
     - SwifterSwift/AppKit (= 4.6.0)
@@ -27,8 +28,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.8.0)
-  - AlamofireImage
+  - AlamofireImage (= 3.5.0)
   - AlamofireObjectMapper (= 5.2.0)
+  - ESPullToRefresh
   - SwifterSwift (= 4.6.0)
   - SwiftLint (= 0.29.0)
 
@@ -37,6 +39,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AlamofireObjectMapper
+    - ESPullToRefresh
     - ObjectMapper
     - SwifterSwift
     - SwiftLint
@@ -45,10 +48,11 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftLint: d4e7443d93e2bbe868dc302e6c7ac30b469d6a14
 
-PODFILE CHECKSUM: e8b0286c028b31c73c53c6f05304ddd2b19d8b2b
+PODFILE CHECKSUM: e5cca5e37d6636a6a5d256d33a44b2569c8b2448
 
 COCOAPODS: 1.5.3

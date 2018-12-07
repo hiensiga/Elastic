@@ -22,7 +22,7 @@ class MessageViewController: UIViewController {
         
         setupView()
         if let companyId = company?.id {
-            loadData(companyId: companyId)
+            loadData(companyId: String(companyId))
         }
     }
     
@@ -83,12 +83,12 @@ extension MessageViewController: UITableViewDataSource {
         
         let message = messages[indexPath.row]
         
-//        cell.textLabel?.text = message.name
-//        cell.detailTextLabel?.text = company.desc
-//        if let url = company.avatarUrl {
-//            let imageURL = URL.init(string: url)!
-//            cell.imageView?.af_setImage(withURL: imageURL, placeholderImage: UIImage.init(named: "img_placeholder_company"), imageTransition: .crossDissolve(0.3))
-//        }
+        cell.textLabel?.text = message.id
+        cell.detailTextLabel?.text = message.content
+        if let url = message.publishedBy?.avatarUrl {
+            let imageURL = URL.init(string: url)!
+            cell.imageView?.af_setImage(withURL: imageURL, placeholderImage: UIImage.init(named: "img_placeholder_company"), imageTransition: .crossDissolve(0.3))
+        }
         
         return cell
     }

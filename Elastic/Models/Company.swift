@@ -11,7 +11,7 @@ import ObjectMapper
 
 class Company: Mappable {
 
-    var id: String?
+    var id: Int?
     var name: String?
     var avatarUrl: String?
     var desc: String?

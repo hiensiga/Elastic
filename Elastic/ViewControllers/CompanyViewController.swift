@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import ESPullToRefresh
 
 class CompanyViewController: UIViewController {
 
@@ -46,11 +47,32 @@ extension CompanyViewController {
     func setupView() {
         
 //        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        setupTableView()
+    }
+    
+    func setupTableView() {
+        self.tableView.es.addPullToRefresh {
+            [unowned self] in
+            
+            self.refreshData()
+        }
     }
 }
 
 // MARK: Data
 extension CompanyViewController {
+    
+    func refreshData() {
+        CompanyAPI.shared.getCompanies(completion: { (companies) in
+            
+            self.companies = companies
+            self.tableView.es.stopPullToRefresh(ignoreDate: true)
+            self.tableView.reloadData()
+        }) { (code, error) in
+            print("getCompanies error : \(error)")
+            self.tableView.es.stopPullToRefresh(ignoreDate: true)
+        }
+    }
     
     func loadData() {
         
@@ -61,7 +83,6 @@ extension CompanyViewController {
         }) { (code, error) in
             print("getCompanies error : \(error)")
         }
-        
     }
 }
 
