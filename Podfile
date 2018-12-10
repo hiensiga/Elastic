@@ -14,6 +14,7 @@ target 'Elastic' do
   # pod 'RealmSwift'
   pod 'AlamofireImage', '3.5.0'
   pod 'ESPullToRefresh'
+  pod 'SkeletonView'
   
   
   target 'ElasticTests' do

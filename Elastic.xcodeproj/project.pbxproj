@@ -24,6 +24,9 @@
 		3F63129721B93E8C0025371A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63129621B93E8C0025371A /* Message.swift */; };
 		3F63129921B93FFC0025371A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63129821B93FFC0025371A /* User.swift */; };
 		3F63129B21B942320025371A /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63129A21B942320025371A /* MessageViewController.swift */; };
+		3FF4F25E21BE5E0800B8700F /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4F25D21BE5E0800B8700F /* MessageTableViewCell.swift */; };
+		3FF4F26221BE6F4C00B8700F /* SkeletonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4F26021BE6F4C00B8700F /* SkeletonTableViewCell.swift */; };
+		3FF4F26321BE6F4C00B8700F /* SkeletonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4F26121BE6F4C00B8700F /* SkeletonTableViewCell.xib */; };
 		616D9A002C3BF4D3DFCBFEF2 /* Pods_ElasticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54D21066A5925A6955B023F /* Pods_ElasticTests.framework */; };
 		7416241213E8E33E571689B5 /* Pods_Elastic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FC118F5703EB54B10A77AE /* Pods_Elastic.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,9 @@
 		3F63129621B93E8C0025371A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3F63129821B93FFC0025371A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3F63129A21B942320025371A /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		3FF4F25D21BE5E0800B8700F /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		3FF4F26021BE6F4C00B8700F /* SkeletonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewCell.swift; sourceTree = "<group>"; };
+		3FF4F26121BE6F4C00B8700F /* SkeletonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkeletonTableViewCell.xib; sourceTree = "<group>"; };
 		5F2D40F4F3512FEA4C4954D0 /* Pods-ElasticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElasticTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElasticTests/Pods-ElasticTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9778BF7051FB9EDF0DA3FE14 /* Pods-ElasticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElasticTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElasticTests/Pods-ElasticTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8FC118F5703EB54B10A77AE /* Pods_Elastic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elastic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,7 +223,9 @@
 		3F63124221B7EAF60025371A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3FF4F25F21BE6F3300B8700F /* Skeleton */,
 				3F63124321B7EB160025371A /* CompanyTableViewCell.swift */,
+				3FF4F25D21BE5E0800B8700F /* MessageTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -244,6 +252,15 @@
 				3F63124721B7EE6C0025371A /* CompanyAPI.swift */,
 			);
 			path = APIs;
+			sourceTree = "<group>";
+		};
+		3FF4F25F21BE6F3300B8700F /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				3FF4F26021BE6F4C00B8700F /* SkeletonTableViewCell.swift */,
+				3FF4F26121BE6F4C00B8700F /* SkeletonTableViewCell.xib */,
+			);
+			path = Skeleton;
 			sourceTree = "<group>";
 		};
 		44BD19D12F8FEFF3B41F970E /* Frameworks */ = {
@@ -366,6 +383,7 @@
 			files = (
 				3F02EA8A219D85A5006AA3A9 /* LaunchScreen.storyboard in Resources */,
 				3F02EA87219D85A5006AA3A9 /* Assets.xcassets in Resources */,
+				3FF4F26321BE6F4C00B8700F /* SkeletonTableViewCell.xib in Resources */,
 				3F02EA85219D8599006AA3A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +441,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -434,6 +453,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,7 +516,9 @@
 				3F02EA82219D8598006AA3A9 /* ViewController.swift in Sources */,
 				3F63124D21B7F5610025371A /* APIConstants.swift in Sources */,
 				3F63129721B93E8C0025371A /* Message.swift in Sources */,
+				3FF4F26221BE6F4C00B8700F /* SkeletonTableViewCell.swift in Sources */,
 				3F02EA80219D8598006AA3A9 /* AppDelegate.swift in Sources */,
+				3FF4F25E21BE5E0800B8700F /* MessageTableViewCell.swift in Sources */,
 				3F63124821B7EE6C0025371A /* CompanyAPI.swift in Sources */,
 				3F63123D21B7E9910025371A /* CompanyViewController.swift in Sources */,
 				3F63129B21B942320025371A /* MessageViewController.swift in Sources */,
