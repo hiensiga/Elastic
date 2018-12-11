@@ -45,3 +45,6 @@ pod 'SwiftLint'
 
 ![API Sequence Diagram](images/sequence_diagram.png)
 
+## Class Diagram
+
+![Class Diagram](images/class_diagram.png)
