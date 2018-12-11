@@ -41,3 +41,7 @@ pod 'SwiftLint'
 ![Companies](images/screen_shot_01.png)
 ![Messages](images/screen_shot_02.png)
 
+## Diagrams
+
+![API Sequence Diagram](images/sequence_diagram.png)
+
