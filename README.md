@@ -1,5 +1,5 @@
 # Elastic
-[Description here]
+App show twitter message about some companies in the world. 
 ## Setup
 Clone project.
 ```
@@ -34,3 +34,10 @@ SwiftLint hooks into  [Clang](http://clang.llvm.org/)  and  [SourceKit](http://w
 Simply add the following line to your Podfile:
 
 pod 'SwiftLint'
+
+
+## Screen Shot
+
+![Companies](images/screen_shot_01.png)
+![Messages](images/screen_shot_02.png)
+

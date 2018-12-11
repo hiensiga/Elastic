@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 class MessageViewController: UIViewController {
 
@@ -87,8 +88,9 @@ extension MessageViewController: UITableViewDataSource {
             cell.hideAnimation()
             let message = messages[indexPath.row]
             
-            cell.lblName?.text = message.id
+            cell.lblName?.text = message.publishedBy?.twitterName
             cell.lblContent?.text = message.content
+            cell.lblDate?.text = message.createdAt?.string(withFormat: "dd/MM/yyyy HH:mm")
             if let url = message.publishedBy?.avatarUrl {
                 let imageURL = URL.init(string: url)!
                 cell.imvAvatar?.af_setImage(withURL: imageURL, placeholderImage: UIImage.init(named: "img_placeholder_company"), imageTransition: .crossDissolve(0.3))

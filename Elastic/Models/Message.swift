@@ -14,7 +14,7 @@ class Message: Mappable {
     var id: String?
     var publishedAt: Date?
     var content: String?
-    var company: Company?
+    var company: [Company]?
     var publishedBy: User?
     var lang: String?
     var url: String?
@@ -33,7 +33,7 @@ class Message: Mappable {
         publishedBy <- map["published_by"]
         lang <- map["lang"]
         url <- map["url"]
-        createdAt <- map["created_at"]
+        createdAt <- (map["created_at"], DateTransform())
         htmlContent <- map["html_content"]
         
     }
