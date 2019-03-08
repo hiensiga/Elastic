@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import GoogleSignIn
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var navigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let realm = try! Realm()
+        print(">> realm: \(String(describing: realm.configuration.fileURL))")
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = "71570459342-25h6f4lm8dcqu8qq0j6uaelaqqa9ldgq.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        
+        if UserManager.shared.isLogin() {
+            gotoHomeScreen()
+        } else {
+            gotoLoginScreen()
+        }
+        
         return true
     }
 
@@ -41,6 +56,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url as URL?,
+                                                 sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+    }
 
+}
+
+// MARK: GIDSignInDelegate
+extension AppDelegate: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+        } else {
+            let user = RUser.init(id: user.userID, token: user.authentication.idToken, name: user.profile.name, givenName: user.profile.givenName, familyName: user.profile.familyName, email: user.profile.email)
+            RealmUtil.clear(type: RUser.self)
+            RealmUtil.create(obj: user)
+            gotoHomeScreen()
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
+    
+}
+
+// MARK: Navigation
+extension AppDelegate {
+    func gotoHomeScreen() {
+        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CompanyViewController")
+        navigationController = UINavigationController(rootViewController: mainVC)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
+    
+    func gotoLoginScreen() {
+        let mainVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        navigationController = UINavigationController(rootViewController: mainVC)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
 }
 

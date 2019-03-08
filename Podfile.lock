@@ -6,7 +6,25 @@ PODS:
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
   - ESPullToRefresh (2.7)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
+  - GTMSessionFetcher/Core (1.2.1)
   - ObjectMapper (3.4.1)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
   - SkeletonView (1.4.1)
   - SwifterSwift (4.6.0):
     - SwifterSwift/AppKit (= 4.6.0)
@@ -32,6 +50,8 @@ DEPENDENCIES:
   - AlamofireImage (= 3.5.0)
   - AlamofireObjectMapper (= 5.2.0)
   - ESPullToRefresh
+  - GoogleSignIn
+  - RealmSwift
   - SkeletonView
   - SwifterSwift (= 4.6.0)
   - SwiftLint (= 0.29.0)
@@ -42,7 +62,12 @@ SPEC REPOS:
     - AlamofireImage
     - AlamofireObjectMapper
     - ESPullToRefresh
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
     - ObjectMapper
+    - Realm
+    - RealmSwift
     - SkeletonView
     - SwifterSwift
     - SwiftLint
@@ -52,11 +77,16 @@ SPEC CHECKSUMS:
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SkeletonView: 60d6ce7edb0cb4c7758db33c74add50392b3c475
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftLint: d4e7443d93e2bbe868dc302e6c7ac30b469d6a14
 
-PODFILE CHECKSUM: e843b260ddd25b73b73b3eb7e64ce2ae36b1286c
+PODFILE CHECKSUM: 49435ded1332d8e0c7a613bff620101ade6f8440
 
 COCOAPODS: 1.5.3

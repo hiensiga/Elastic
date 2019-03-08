@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="OhV-YU-Kjc">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Ccc-MK-23b" customClass="LoginViewController" customModule="Elastic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B2L-o1-rq4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2mR-H4-H3F" customClass="GIDSignInButton">
+                                <rect key="frame" x="67.5" y="279.5" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="tapGoogleSignIn:" destination="Ccc-MK-23b" eventType="touchUpInside" id="fxG-tT-1yD"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.53725490200000003" green="0.71764705880000002" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2mR-H4-H3F" firstAttribute="centerY" secondItem="clX-3G-iUn" secondAttribute="centerY" id="2M7-d1-22X"/>
+                            <constraint firstItem="2mR-H4-H3F" firstAttribute="centerX" secondItem="clX-3G-iUn" secondAttribute="centerX" id="E9w-dN-zA6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="clX-3G-iUn"/>
+                    </view>
+                    <connections>
+                        <outlet property="signInButton" destination="2mR-H4-H3F" id="cq8-rt-dv2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUL-9o-Vfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-180" y="199.25037481259372"/>
+        </scene>
+    </scenes>
+</document>
